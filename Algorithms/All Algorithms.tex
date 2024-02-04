@@ -1,0 +1,301 @@
+
+
+\documentclass[11pt]{article}
+\usepackage{amssymb,amsfonts,amsmath,latexsym,epsf,tikz,url}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{labelformat={default},labelsep=period,name={Figure}}
+\usepackage{amssymb,amsfonts,amsmath,latexsym,epsf,tikz,url}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{fancyvrb}
+
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{libertine}
+
+\usepackage[numbers,sort&compress]{natbib}
+
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition} 
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{acknowledgements}[theorem]{Acknowledgements}
+
+
+\makeatletter
+\renewcommand{\fnum@figure}{\textbf{Fig.} \textbf{\thefigure}}
+\makeatother
+
+\newcommand{\proof}{\noindent{\bf Proof.\ }}
+\newcommand{\qed}{\hfill $\square$\medskip}
+% \newcommand{\deg}{{\rm deg}}
+%\newcommand{\s}{\color{red}}
+
+\textwidth 14.5cm
+\textheight 21.0cm
+\oddsidemargin 0.4cm
+\evensidemargin 0.4cm
+\voffset -1cm
+
+\begin{document}
+
+%---------------------------------Algorithm-----------------
+	
+\IncMargin{1em} \begin{algorithm} [H]\label{111}
+	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up} \SetKwFunction{Union}{Union}
+	\SetKwFunction{FindCompress}{FindCompress} 
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	
+	\Input{$bs_i^{t-1}$: cell states of block $b_i$ at time $t-1.$
+	}	
+	\Output{$bs_i^t$: cell states of block $b_i$ at time $t.$} 
+	
+	$bs_i^t[0]\leftarrow IntegerPart(\frac{bs_i^{t-1}[1]}{2})$\;
+	$bs_i^t[1]\leftarrow null$\;
+	
+	$bs_i^t[2]\leftarrow FractionalPart(\frac{bs_i^{t-1}[1]}{2})$\;
+	$bs_i^t[3]\leftarrow null$\;
+	
+	\caption{Appling rule R1 on block $b_i$ in odd time step t;}\label{Code Geneator Procedure} \end{algorithm}\DecMargin{1em}\
+
+%---------------------------------Algorithm 2-----------------
+
+\IncMargin{1em} \begin{algorithm} [H]\label{111}
+	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up} \SetKwFunction{Union}{Union}
+	\SetKwFunction{FindCompress}{FindCompress} 
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	
+	\Input{$bs_i^{t-1}$: cell states of block $b_i$ at time $t-1.$
+	}	
+	\Output{$bs_i^t$: cell states of block $b_i$ at time $t.$} 
+	
+	$bs_i^t[0]\leftarrow null$\;
+	\If{(i\ is\ equal\ to\ the\ number\ of\ blocks)}{
+		
+		$bs_i^t[1]\leftarrow bs_{i-1}^{t-1}[0]$\;
+	}
+	\ElseIf{(i\ is\ equal\ to\ zero)}{
+		$bs_i^t[1]\leftarrow bs_{i}^{t-1}[2]$\;
+	}		
+	\Else{
+		
+		$bs_i^t[1]\leftarrow bs_{i}^{t-1}[2]+bs_{i-1}^{t-1}[0]$\;
+		
+	}
+	
+	$bs_i^t[2]\leftarrow null$\;
+	$bs_i^t[3]\leftarrow null$\;
+
+	\caption{Appling rule R2 on block $b_i$ in even time step t;}\label{Code Geneator Procedure} \end{algorithm}\DecMargin{1em}\ \\
+
+%---------------------------------Algorithm 3-----------------
+
+
+%\IncMargin{1em} \begin{algorithm} [H]\label{111}
+%	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up} \SetKwFunction{Union}{Union}
+%	\SetKwFunction{FindCompress}{FindCompress} 
+%	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+%	
+%	\Input{x, a list of digits in number X.\\
+		
+%	}	
+%	\Output{z, the quotients of X/2 .} 
+%	$cin\leftarrow 0$\;
+%	$z[0]\leftarrow  ((x[0]*5)\ mod\ 10)/10$\;
+%	\For{$i=0$ \KwTo $n$}{
+%		$d\leftarrow decimal\ section\ of\ (x[i]*5+cin)$\;
+%		$k\leftarrow (x[i+1]*5)+d$\;
+%		$z[i+1]\leftarrow  (k\mod 10)$\;
+%		$cin\leftarrow {decimal\ section\ of\ (k/10)}$\;
+%	}
+%	$z[n+1]\leftarrow decimal\ section\ of\ (x[n]*5)/10$\;
+%	\caption{A2(Division by Multiplication)}\label{Code Geneator Procedure} \end{algorithm}\DecMargin{1em}\
+
+%---------------------------------Algorithm 4-----------------
+
+%---------------------------------Algorithm 5-----------------
+
+
+\IncMargin{1em} \begin{algorithm} [H]\label{111}
+	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up} \SetKwFunction{Union}{Union}
+	\SetKwFunction{FindCompress}{FindCompress} 
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	
+	\Input{D2CA(x) and D2CA(y).\\
+		T: number of levels (time steps).
+		
+	}	
+	\Output{D2CA(z) = D2CA(x) + D2CA(y).} 
+	
+	$d\leftarrow Number\ of\ digit\ in\ x\ or\ y$\;
+	$m\leftarrow Number\ of\ blocks\ in\ time\ step\ t$\;
+	
+	\For{$(t=0$ \KwTo $T-1)$}
+	{   
+		$bc\leftarrow \left\lfloor t/2 \right\rfloor+2$; // block counts\\
+		$c\leftarrow 0$;\ //carry digit\\
+		\If{$(t\ is\ even)$} {  
+			
+			\For{$(i=0$ \KwTo $bc-1)$}{
+				
+				$sum\leftarrow  (bs_{i}^t[1])_{x}+(bs_{i}^t[1])_{y}+c$;\\
+				
+				\If{$(sum>=10)$}{
+					$(bs_{i}^t[1])_{z}\leftarrow sum-10$;\\
+					$c\leftarrow 1$;
+				}
+				\Else{
+					$(bs_{i}^t[1])_{z}\leftarrow sum$;\\
+					$c\leftarrow 0$;
+				}
+			}
+			\If{$(c==1)$}{
+				$(bs_{i+1}^t[1])_{z}\leftarrow 1$;\\		
+			}
+			
+		}
+		
+		
+		
+		\Else(//t is odd){
+			
+			
+			
+			\For{$(i=0$ \KwTo $bc-1)$}{
+				
+				$sum\leftarrow  (bs_{i}^t[2])_{x}+(bs_{i}^t[2])_{y}+c$;\\
+				
+				\If{$(sum>=10)$}{
+					$(bs_{i}^t[2])_{z}\leftarrow sum-10$;\\
+					$c\leftarrow 1$;
+				}
+				\Else{ 
+					$(bs_{i}^t[2])_{z}\leftarrow sum$;\\
+					$c\leftarrow 0$;
+				}
+				
+				$sum\leftarrow  (bs_{i}^t[0])_{x}+(bs_{i}^t[0])_{y}+c$;\\
+				
+				\If{$(sum>4)$}{
+					$(bs_{i}^t[0])_{z}\leftarrow\ sum- 5$;\\
+					$c\leftarrow 5$;
+				}
+				\Else{
+					$(bs_{i}^t[0])_{z}\leftarrow sum$;\\
+					$c\leftarrow 0$;
+				}
+				
+			}
+			
+			
+			\If{$(c>0)$}{
+				$(bs_{i+1}^t[2])_{z}\leftarrow c$;\\
+				$(bs_{i+1}^t[0])_{z}\leftarrow 0$;\\
+			}
+			
+		}	
+		
+	}
+
+	\caption{Sum of D2CA(x) and D2CA(y)}\label{Code Geneator Procedure} \end{algorithm}\DecMargin{1em}\
+
+%---------------------------------Algorithm 6-----------------
+
+
+\IncMargin{1em} \begin{algorithm} [H]\label{111}
+	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up} \SetKwFunction{Union}{Union}
+	\SetKwFunction{FindCompress}{FindCompress} 
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	
+	\Input{D2CA(key1) and D2CA(key2).\\
+		
+	}	
+	\Output{$subkey$.} 
+	$numberOfLozenge\leftarrow  \left \lceil |plaintext|/8\right \rceil$;\ //each lozenge consists of 8 cells\\
+	$L1\leftarrow Extract\_Lozenge(D2CA(key1),numberOfLozenge)$\;
+	$L2\leftarrow Extract\_Lozenge(D2CA(key2),numberOfLozenge)$\;
+	
+	$subkey_i\leftarrow [(L1_{ij}+L2_{ij}*169)], \forall i=1..numberOfLozenge,j=1..8$;\ //i: lozenge index, j: cell index in lozenge, 169 is arbitrary constant number\\
+	
+	
+	\caption{Produce subkeys in LSC algorithm}\label{Code Geneator Procedure} \end{algorithm}\DecMargin{1em}\
+%--------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------
+
+\IncMargin{1em} \begin{algorithm} [H]\label{111}
+	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up} \SetKwFunction{Union}{Union}
+	\SetKwFunction{FindCompress}{FindCompress} 
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	
+	\Input{x, a list of digits in number X.\\
+		
+	}	
+	\Output{y, the quotients of X/2 .} 
+	$y[0]\leftarrow  ((x[0]*5)\ mod\ 10)/10$\;	
+	
+	\For{$(i=0$ \KwTo $n)$}
+	{   
+		$d1\leftarrow x[i]$\;
+		$d2\leftarrow x[i+1]$\;
+		\If{$(d1\ is\ even)$}{ 
+			\Switch{d2}{
+				\Case{0,1}{
+					$y[i]\leftarrow 0$
+				}
+				
+				\Case{2,3}{
+					$y[i]\leftarrow 1$
+				}
+				\Case{4,5}{
+					$y[i]\leftarrow 2$
+				}
+				\Case{6,7}{
+					$y[i]\leftarrow 3$
+				}
+				\Case{8,9}{
+					$y[i]\leftarrow 4$
+				}
+			}
+		}	
+		\Else{
+			\Switch{d2}{
+				\Case{0,1}{
+					$y[i]\leftarrow 5$
+				}
+				\Case{2,3}{
+					$y[i]\leftarrow 6$
+				}
+				\Case{4,5}{
+					$y[i]\leftarrow 7$
+				}
+				\Case{6,7}{
+					$y[i]\leftarrow 8$
+				}
+				\Case{8,9}{
+					$y[i]\leftarrow 9$
+				}
+			}
+			
+		}
+		
+	}	
+	
+	
+	$y[n+1]\leftarrow decimal\ section\ of\ (x[n]*5)/10$\;	
+	\caption{Division by Replacement)}\label{Code Geneator Procedure} \end{algorithm}\DecMargin{1em}\
+
+
+
+\end{document}
